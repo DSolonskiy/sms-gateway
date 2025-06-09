@@ -48,7 +48,7 @@ services:
     ports:
       - 5001:5000
     devices:
-      - "/dev/ttyUSB5:/dev/ttyUSB0"
+      - "/dev/ttyUSB5:/dev/ttyUSB5"
     depends_on:
       db:
         condition: service_healthy

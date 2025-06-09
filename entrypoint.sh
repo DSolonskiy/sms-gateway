@@ -24,6 +24,7 @@ Host = ${MYSQL_HOST}
 User = ${MYSQL_USER}
 Password = ${MYSQL_PASSWORD}
 Database = ${MYSQL_DATABASE}
+PhoneID = ${PHONE_ID}
 
 logfile = /dev/stdout
 debuglevel = ${GAMMU_DEBUG_LEVEL}

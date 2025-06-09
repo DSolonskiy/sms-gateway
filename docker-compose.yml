@@ -22,10 +22,10 @@ services:
       interval: 15s
       timeout: 5s
       retries: 5
-  backend:
+  gammu_modem_9210923872:
     image: fizcko/sms-gateway:latest
     #build: .
-    container_name: sms-gateway_server
+    container_name: sim_9210923872
     restart: always
     ports:
       - 5000:5000
@@ -40,4 +40,22 @@ services:
       - MYSQL_PASSWORD=Bpj7hXNCextgnzSWckFybV
       - MYSQL_DATABASE=smsd
       - GAMMU_DEVICE=/dev/ttyUSB0
+  gammu_modem:
+    image: fizcko/sms-gateway:latest
+    #build: .
+    container_name: sms-gateway_server
+    restart: always
+    ports:
+      - 5000:5001
+    devices:
+      - "/dev/serial/by-id/usb-HUAWEI_Technology_HUAWEI_Mobile-if00-port0:/dev/usb-HUAWEI_Technology_HUAWEI_Mobile-if00-port0"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_USER=sms-gateway
+      - MYSQL_PASSWORD=Bpj7hXNCextgnzSWckFybV
+      - MYSQL_DATABASE=smsd
+      - GAMMU_DEVICE=/dev/usb-HUAWEI_Technology_HUAWEI_Mobile-if00-port0"
 

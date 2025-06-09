@@ -46,7 +46,7 @@ services:
     container_name:  sim_def
     restart: always
     ports:
-      - 5000:5001
+      - 50001:5000
     devices:
       - "/dev/serial/by-id/usb-HUAWEI_Technology_HUAWEI_Mobile-if00-port0:/dev/usb-HUAWEI_Technology_HUAWEI_Mobile-if00-port0"
     depends_on:

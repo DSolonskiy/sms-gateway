@@ -19,14 +19,14 @@ services:
       timeout: 5s
       retries: 5
   backend:
-    # image: fizcko/sms-gateway:latest
-    build: .
+    image: fizcko/sms-gateway:latest
+    #build: .
     container_name: sms-gateway_server
     restart: always
     ports:
       - 5000:5000
     devices:
-      - "/dev/ttyUSB2:/dev/phone"
+      - "/dev/ttyUSB0:/dev/ttyUSB0"
     depends_on:
       db:
         condition: service_healthy
@@ -35,5 +35,5 @@ services:
       - MYSQL_USER=sms-gateway
       - MYSQL_PASSWORD=Bpj7hXNCextgnzSWckFybV
       - MYSQL_DATABASE=smsd
-      - GAMMU_DEVICE=/dev/phone
+      - GAMMU_DEVICE=/dev/ttyUSB0
 

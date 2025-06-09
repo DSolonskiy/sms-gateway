@@ -57,5 +57,5 @@ services:
       - MYSQL_USER=sms-gateway
       - MYSQL_PASSWORD=Bpj7hXNCextgnzSWckFybV
       - MYSQL_DATABASE=smsd
-      - GAMMU_DEVICE=/dev/ttyUSB0
+      - GAMMU_DEVICE=/dev/ttyUSB5
 

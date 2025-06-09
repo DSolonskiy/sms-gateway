@@ -48,7 +48,7 @@ services:
     ports:
       - 50001:5000
     devices:
-      - "/dev/serial/by-id/usb-HUAWEI_Technology_HUAWEI_Mobile-if00-port0:/dev/usb-HUAWEI_Technology_HUAWEI_Mobile-if00-port0"
+      - "/dev/ttyUSB5:/dev/ttyUSB0"
     depends_on:
       db:
         condition: service_healthy
@@ -57,5 +57,5 @@ services:
       - MYSQL_USER=sms-gateway
       - MYSQL_PASSWORD=Bpj7hXNCextgnzSWckFybV
       - MYSQL_DATABASE=smsd
-      - GAMMU_DEVICE=/dev/usb-HUAWEI_Technology_HUAWEI_Mobile-if00-port0"
+      - GAMMU_DEVICE=/dev/ttyUSB0
 

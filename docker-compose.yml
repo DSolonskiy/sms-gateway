@@ -23,8 +23,8 @@ services:
       timeout: 5s
       retries: 5
   gammu_modem_9210923872:
-    image: fizcko/sms-gateway:latest
-    #build: .
+    #image: fizcko/sms-gateway:latest
+    build: .
     container_name: sim_9210923872
     restart: always
     ports:
@@ -41,8 +41,8 @@ services:
       - MYSQL_DATABASE=smsd
       - GAMMU_DEVICE=/dev/ttyUSB0
   gammu_modem:
-    image: fizcko/sms-gateway:latest
-    #build: .
+    #image: fizcko/sms-gateway:latest
+    build: .
     container_name:  sim_def
     restart: always
     ports:

@@ -1,14 +1,19 @@
 FROM python:3.11-alpine3.20 AS base
 
+
+# Set UTF-8 locale
+ENV LC_ALL C.UTF-8
+
+# Set right timezone
+ARG TZ=Europe/Moscow
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 RUN apk update \
-	    && apk add --no-cache tzdata \
+	    && apk add --no-cache \
         gammu=1.42.0-r1 \
 		gammu-libs=1.42.0-r1 \
 		gammu-smsd=1.42.0-r1 \
-		mariadb-dev \
-        && cp /usr/share/zoneinfo/Europe/Moscow /etc/localtime \
-        && echo "Europe/Moscow" > /etc/timezone \
-        && apk del tzdata
+		mariadb-dev
 
 RUN python -m pip install -U pip
 
@@ -25,7 +30,6 @@ WORKDIR /opt/sms_gateway
 
 RUN mkdir -p /opt/sms_gateway 
 
-ENV TZ="Europe/Moscow"
 ENV SERVER_IP="0.0.0.0"
 ENV SERVER_PORT="5000"
 

@@ -43,7 +43,7 @@ services:
       - MYSQL_PASSWORD=Bpj7hXNCextgnzSWckFybV
       - MYSQL_DATABASE=smsd
       - GAMMU_DEVICE=/dev/ttyUSB0
-      - PHONE_ID = 3872
+      - PHONE_ID=3872
   gammu_modem_9214359834:
     #image: fizcko/sms-gateway:latest
     build: .
@@ -62,5 +62,5 @@ services:
       - MYSQL_PASSWORD=Bpj7hXNCextgnzSWckFybV
       - MYSQL_DATABASE=smsd
       - GAMMU_DEVICE=/dev/ttyUSB5
-      - PHONE_ID = USB5
+      - PHONE_ID=9834
 

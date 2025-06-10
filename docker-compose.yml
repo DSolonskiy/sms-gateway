@@ -44,10 +44,10 @@ services:
       - MYSQL_DATABASE=smsd
       - GAMMU_DEVICE=/dev/ttyUSB0
       - PHONE_ID = 3872
-  gammu_modem:
+  gammu_modem_9214359834:
     #image: fizcko/sms-gateway:latest
     build: .
-    container_name:  sim_def
+    container_name:  sim_9214359834
     restart: "no"
     ports:
       - 5001:5000

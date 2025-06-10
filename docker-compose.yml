@@ -3,7 +3,6 @@ version: '3'
 volumes:
   mariadb_data:
 
-
 services:
   db:
     image: mariadb:11.4-ubi

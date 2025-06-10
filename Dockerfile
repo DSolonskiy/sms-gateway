@@ -1,8 +1,8 @@
 FROM python:3.11-alpine3.20 AS base
 
 RUN apk update \
-	    && apk add --no-cache \
-        gammu=1.42.0-r1 \
+	&& apk add --no-cache \
+		gammu=1.42.0-r1 \
 		gammu-libs=1.42.0-r1 \
 		gammu-smsd=1.42.0-r1 \
 		mariadb-dev

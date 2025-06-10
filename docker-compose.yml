@@ -13,7 +13,7 @@ services:
     volumes:
       - mariadb_data:/var/lib/mysql
     ports:
-      - "33061:3306"
+      - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=UP5yeFxRcvtMBzjdfNmT6p
       - MYSQL_USER=sms-gateway
@@ -38,9 +38,9 @@ services:
       db:
         condition: service_healthy
     environment:
-      - MYSQL_HOST=db
-      - MYSQL_USER=sms-gateway
-      - MYSQL_PASSWORD=Bpj7hXNCextgnzSWckFybV
+      - MYSQL_HOST=62.76.233.147
+      - MYSQL_USER=smsd
+      - MYSQL_PASSWORD=@A11bb22cc
       - MYSQL_DATABASE=smsd
       - GAMMU_DEVICE=/dev/ttyUSB0
       - PHONE_ID=3872
@@ -57,9 +57,9 @@ services:
       db:
         condition: service_healthy
     environment:
-      - MYSQL_HOST=db
-      - MYSQL_USER=sms-gateway
-      - MYSQL_PASSWORD=Bpj7hXNCextgnzSWckFybV
+      - MYSQL_HOST=62.76.233.147
+      - MYSQL_USER=smsd
+      - MYSQL_PASSWORD=@A11bb22cc
       - MYSQL_DATABASE=smsd
       - GAMMU_DEVICE=/dev/ttyUSB5
       - PHONE_ID=9834

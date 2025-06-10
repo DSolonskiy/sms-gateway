@@ -6,7 +6,7 @@ sms_post = server.api.model('Send SMS Payload', {
         fields.String,
         required=True,
         description='List of recipients',
-        example=['+33612345678','+33687654321']
+        example=['+79210934181']
     ),
     'message': fields.String(
         required=True,
@@ -18,7 +18,7 @@ sms_post = server.api.model('Send SMS Payload', {
 
 sms_send = server.api.model('Send SMS result', {
     'DestinationNumber': fields.String(
-        example='+33612345678'
+        example='+79210934181'
     ),
     'smsID': fields.Integer(
         example='1'
@@ -30,11 +30,11 @@ send_result = server.api.model('Send SMS results', {
         fields.Nested(sms_send),
         example=[
             {
-                'DestinationNumber': '+33612345678',
+                'DestinationNumber': '+79210934181',
                 'smsID': '1'
             },
             {
-                'DestinationNumber': '+33687654321',
+                'DestinationNumber': '+79210934181',
                 'smsID': '2'
             }
         ]

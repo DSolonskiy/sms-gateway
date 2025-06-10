@@ -1,13 +1,5 @@
 FROM python:3.11-alpine3.20 AS base
 
-
-# Set UTF-8 locale
-ENV LC_ALL C.UTF-8
-
-# Set right timezone
-ARG TZ=Europe/Moscow
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
-
 RUN apk update \
 	    && apk add --no-cache \
         gammu=1.42.0-r1 \

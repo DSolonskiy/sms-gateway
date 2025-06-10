@@ -32,9 +32,6 @@ services:
     restart: always
     ports:
       - 8080:8080
-    depends_on:
-      db: # Зависит от сервиса db
-        condition: service_healthy # Запустится только когда db будет healthy
   gammu_modem_9210923872:
     #image: fizcko/sms-gateway:latest
     build: .

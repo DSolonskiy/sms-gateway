@@ -75,7 +75,7 @@ services:
     container_name: sim_9210923954
     restart: "no"
     ports:
-      - 5001:5000
+      - 5002:5000
     devices:
       - "/dev/ttyUSB2:/dev/ttyUSB2"
     depends_on:

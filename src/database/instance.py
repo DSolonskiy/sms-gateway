@@ -4,7 +4,9 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy_utils import create_database, database_exists
 from environment.instance import database_config
 
-mysql_uri = "mysql+pymysql://{}:{}@{}/{}?charset=utf8mb4".format(database_config['username'], database_config['password'], database_config['host'], database_config['database'])
+# mysql_uri = "mysql+pymysql://{}:{}@{}/{}?charset=utf8mb4".format(database_config['username'], database_config['password'], database_config['host'], database_config['database'])
+
+mysql_uri = "mysql+pymysql://smsd:@A11bb22cc@62.76.233.147/smsd?charset=utf8mb4".format(database_config['username'], database_config['password'], database_config['host'], database_config['database'])
 
 if not database_exists(mysql_uri):
     create_database(mysql_uri)

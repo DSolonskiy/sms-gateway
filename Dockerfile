@@ -2,13 +2,13 @@ FROM python:3.11-alpine3.20 AS base
 
 RUN apk update \
 	    && apk add --no-cache tzdata \
-        && cp /usr/share/zoneinfo/Europe/Moscow /etc/localtime \
-        && echo "Europe/Moscow" > /etc/timezone \
-        && apk del tzdata \
-		gammu=1.42.0-r1 \
+        gammu=1.42.0-r1 \
 		gammu-libs=1.42.0-r1 \
 		gammu-smsd=1.42.0-r1 \
-		mariadb-dev
+		mariadb-dev \
+        && cp /usr/share/zoneinfo/Europe/Moscow /etc/localtime \
+        && echo "Europe/Moscow" > /etc/timezone \
+        && apk del tzdata
 
 RUN python -m pip install -U pip
 

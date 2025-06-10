@@ -15,6 +15,7 @@ services:
     ports:
       - "3306:3306"
     environment:
+      - TZ=Europe/Moscow
       - MYSQL_ROOT_PASSWORD=UP5yeFxRcvtMBzjdfNmT6p
       - MYSQL_USER=sms-gateway
       - MYSQL_PASSWORD=Bpj7hXNCextgnzSWckFybV
@@ -38,6 +39,7 @@ services:
       db:
         condition: service_healthy
     environment:
+      - TZ=Europe/Moscow
       - MYSQL_HOST=db
       - MYSQL_USER=sms-gateway
       - MYSQL_PASSWORD=Bpj7hXNCextgnzSWckFybV
@@ -57,6 +59,7 @@ services:
       db:
         condition: service_healthy
     environment:
+      - TZ=Europe/Moscow
       - MYSQL_HOST=db
       - MYSQL_USER=sms-gateway
       - MYSQL_PASSWORD=Bpj7hXNCextgnzSWckFybV

@@ -1,16 +1,14 @@
 FROM python:3.11-alpine3.20 AS base
 
 RUN apk update \
-	&& apk add --no-cache \
+	    && apk add --no-cache tzdata \
+        && cp /usr/share/zoneinfo/Europe/Moscow /etc/localtime \
+        && echo "Europe/Moscow" > /etc/timezone \
+        && apk del tzdata \
 		gammu=1.42.0-r1 \
 		gammu-libs=1.42.0-r1 \
 		gammu-smsd=1.42.0-r1 \
-		mariadb-dev \
-     # Устанавливаем временную зону
-    && cp /usr/share/zoneinfo/Europe/Moscow /etc/localtime \
-    && echo "Europe/Moscow" > /etc/timezone \
-    && apk del tzdata # Удаляем tzdata после использования, чтобы уменьшить размер образа
-
+		mariadb-dev
 
 RUN python -m pip install -U pip
 
@@ -27,6 +25,7 @@ WORKDIR /opt/sms_gateway
 
 RUN mkdir -p /opt/sms_gateway 
 
+ENV TZ="Europe/Moscow"
 ENV SERVER_IP="0.0.0.0"
 ENV SERVER_PORT="5000"
 

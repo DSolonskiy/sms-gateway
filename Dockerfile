@@ -5,7 +5,12 @@ RUN apk update \
 		gammu=1.42.0-r1 \
 		gammu-libs=1.42.0-r1 \
 		gammu-smsd=1.42.0-r1 \
-		mariadb-dev
+		mariadb-dev \
+     # Устанавливаем временную зону
+    && cp /usr/share/zoneinfo/Europe/Moscow /etc/localtime \
+    && echo "Europe/Moscow" > /etc/timezone \
+    && apk del tzdata # Удаляем tzdata после использования, чтобы уменьшить размер образа
+
 
 RUN python -m pip install -U pip
 

@@ -106,6 +106,6 @@ services:
       - MYSQL_PASSWORD=Bpj7hXNCextgnzSWckFybV
       - MYSQL_DATABASE=smsd
       - GAMMU_DEVICE=/dev/ttyUSB0
-      - PHONE_ID=3954
+      - PHONE_ID=def
 
 

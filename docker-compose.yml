@@ -31,7 +31,7 @@ services:
     restart: always
     ports:
       - 8080:8080
-  gammu_modem_9210923872:
+  gammu_modem_357224028610991:
     #image: fizcko/sms-gateway:latest
     build: .
     container_name: sim_9210923872
@@ -39,7 +39,7 @@ services:
     ports:
       - 5000:5000
     devices:
-      - "/dev/ttyUSB0:/dev/ttyUSB0"
+      - "/dev/ttyModem1:/dev/ttyUSB0"
     depends_on:
       db:
         condition: service_healthy
@@ -50,7 +50,7 @@ services:
       - MYSQL_DATABASE=smsd
       - GAMMU_DEVICE=/dev/ttyUSB0
       - PHONE_ID=3872
-  gammu_modem_9214359834:
+  gammu_modem_861280010072094:
     #image: fizcko/sms-gateway:latest
     build: .
     container_name:  sim_9214359834
@@ -58,7 +58,7 @@ services:
     ports:
       - 5001:5000
     devices:
-      - "/dev/ttyUSB2:/dev/ttyUSB0"
+      - "/dev/ttyModem2:/dev/ttyUSB0"
     depends_on:
       db:
         condition: service_healthy
@@ -69,7 +69,7 @@ services:
       - MYSQL_DATABASE=smsd
       - GAMMU_DEVICE=/dev/ttyUSB0
       - PHONE_ID=9834
-  gammu_modem_9210923954:
+  gammu_modem_860014018870345:
     #image: fizcko/sms-gateway:latest
     build: .
     container_name: sim_9210923954
@@ -77,7 +77,7 @@ services:
     ports:
       - 5002:5000
     devices:
-      - "/dev/ttyUSB7:/dev/ttyUSB0"
+      - "/dev/ttyModem3:/dev/ttyUSB0"
     depends_on:
       db:
         condition: service_healthy
@@ -88,24 +88,6 @@ services:
       - MYSQL_DATABASE=smsd
       - GAMMU_DEVICE=/dev/ttyUSB0
       - PHONE_ID=3954
-  gammu_modem_def:
-    #image: fizcko/sms-gateway:latest
-    build: .
-    container_name: sim_def
-    restart: "no"
-    ports:
-      - 5003:5000
-    devices:
-      - "/dev/ttyUSB8:/dev/ttyUSB0"
-    depends_on:
-      db:
-        condition: service_healthy
-    environment:
-      - MYSQL_HOST=db
-      - MYSQL_USER=sms-gateway
-      - MYSQL_PASSWORD=Bpj7hXNCextgnzSWckFybV
-      - MYSQL_DATABASE=smsd
-      - GAMMU_DEVICE=/dev/ttyUSB0
-      - PHONE_ID=def
+
 
 

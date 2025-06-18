@@ -31,7 +31,7 @@ services:
     restart: always
     ports:
       - 8080:8080
-  gammu_modem_357224028610991:
+  gammu_modem_861280010072094:
     #image: fizcko/sms-gateway:latest
     build: .
     container_name: sim_9210923872
@@ -50,7 +50,7 @@ services:
       - MYSQL_DATABASE=smsd
       - GAMMU_DEVICE=/dev/ttyUSB0
       - PHONE_ID=3872
-  gammu_modem_861280010072094:
+  gammu_modem_357224028610991:
     #image: fizcko/sms-gateway:latest
     build: .
     container_name:  sim_9214359834

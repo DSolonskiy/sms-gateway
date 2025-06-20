@@ -31,10 +31,10 @@ services:
     restart: always
     ports:
       - 8080:8080
-  gammu_modem_357224028610991_1:
+  gammu_modem_357224028610991:
     #image: fizcko/sms-gateway:latest
     build: .
-    container_name:  sim_9213258503111_1
+    container_name:  sim_9210923954
     restart: always
     ports:
       - 5001:5000

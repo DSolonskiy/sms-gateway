@@ -15,10 +15,11 @@ cat > $GAMMU_SMSD_CONF <<EOL
 device = ${GAMMU_DEVICE}
 connection = ${GAMMU_DEVICE_CONNECTION}
 baudrate = 19200
+PIN = ""
 
 # SMSD configuration, see gammu-smsdrc(5)
 [smsd]
-#PIN = ${GAMMU_PIN}
+PIN = ${GAMMU_PIN}
 Service = sql
 Driver = native_mysql
 Host = ${MYSQL_HOST}

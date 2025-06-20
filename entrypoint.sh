@@ -18,7 +18,7 @@ baudrate = 19200
 
 # SMSD configuration, see gammu-smsdrc(5)
 [smsd]
-PIN = ${GAMMU_PIN}
+#PIN = ${GAMMU_PIN}
 Service = sql
 Driver = native_mysql
 Host = ${MYSQL_HOST}

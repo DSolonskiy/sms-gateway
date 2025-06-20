@@ -34,7 +34,7 @@ services:
   gammu_modem_357224028610991:
     #image: fizcko/sms-gateway:latest
     build: .
-    container_name:  sim_9213258503
+    container_name:  sim_9213258503111
     restart: always
     ports:
       - 5001:5000

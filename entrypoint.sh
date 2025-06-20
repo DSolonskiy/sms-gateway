@@ -1,15 +1,23 @@
 #!/bin/bash
 
+
+# Генерация конфигурации для gammu (для диагностики)
+cat > /etc/gammurc <<EOL
+[gammu]
+device = ${GAMMU_DEVICE}
+connection = ${GAMMU_DEVICE_CONNECTION}
+baudrate = 19200
+EOL
+
 # Define variables
-ROOT_PATH="/opt/sms_gateway"
+#ROOT_PATH="/opt/sms_gateway"
 
 # Go into ROOT_PATH
-cd $ROOT_PATH
+#cd $ROOT_PATH
 
 # Create config files
 cat > $GAMMU_SMSD_CONF <<EOL
 # Configuration file for Gammu SMS Daemon
-
 # Gammu library configuration, see gammurc(5)
 [gammu]
 device = ${GAMMU_DEVICE}

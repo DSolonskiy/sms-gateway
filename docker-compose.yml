@@ -35,7 +35,7 @@ services:
     #image: fizcko/sms-gateway:latest
     build: .
     container_name:  sim_9213258503
-    restart: "no"
+    restart: always
     ports:
       - 5001:5000
     devices:

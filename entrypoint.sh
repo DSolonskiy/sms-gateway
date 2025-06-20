@@ -14,6 +14,7 @@ cat > $GAMMU_SMSD_CONF <<EOL
 [gammu]
 device = ${GAMMU_DEVICE}
 connection = ${GAMMU_DEVICE_CONNECTION}
+baudrate = 19200
 
 # SMSD configuration, see gammu-smsdrc(5)
 [smsd]

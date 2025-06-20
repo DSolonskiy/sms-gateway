@@ -39,7 +39,7 @@ services:
     ports:
       - 5001:5000
     devices:
-      - "/dev/ttyModem4:/dev/ttyUSB0"
+      - "/dev/ttyModem3:/dev/ttyUSB0"
     depends_on:
       db:
         condition: service_healthy

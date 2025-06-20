@@ -34,12 +34,12 @@ services:
   gammu_modem_860014018870345:
     #image: fizcko/sms-gateway:latest
     build: .
-    container_name:  sim_9214359834
+    container_name:  sim_9213258503
     restart: "no"
     ports:
       - 5001:5000
     devices:
-      - "/dev/ttyModem2:/dev/ttyUSB0"
+      - "/dev/ttyModem4:/dev/ttyUSB0"
     depends_on:
       db:
         condition: service_healthy
